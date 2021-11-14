@@ -41,7 +41,7 @@ CREATE TABLE `civicrm_asset` (
   `asset_owner_contact_id` int unsigned COMMENT 'FK to Contact that owns the asset (usually an organisation).',
   `asset_possessor_contact_id` int unsigned COMMENT 'FK to Contact that possesses the asset (usually an individual).',
   PRIMARY KEY (`id`),
-  CONSTRAINT FK_civicrm_asset_asset_owner_contact_id FOREIGN KEY (`asset_owner_contact_id`) REFERENCES `civicrm_contact`(`id`) ON DELETE CASCADE,
-  CONSTRAINT FK_civicrm_asset_asset_possessor_contact_id FOREIGN KEY (`asset_possessor_contact_id`) REFERENCES `civicrm_contact`(`id`) ON DELETE CASCADE
+  CONSTRAINT FK_civicrm_asset_asset_owner_contact_id FOREIGN KEY (`asset_owner_contact_id`) REFERENCES `civicrm_contact`(`id`) ON DELETE NO ACTION,
+  CONSTRAINT FK_civicrm_asset_asset_possessor_contact_id FOREIGN KEY (`asset_possessor_contact_id`) REFERENCES `civicrm_contact`(`id`) ON DELETE NO ACTION
 )
 ENGINE=InnoDB;
