@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<menu>
+  <item>
+    <path>civicrm/assets</path>
+    <page_callback>CRM_Assetlist_Page_ViewAssetsPage</page_callback>
+    <title>ViewAssetsPage</title>
+    <access_arguments>access CiviCRM</access_arguments>
+  </item>
+  <item>
+    <path>civicrm/assets/create</path>
+    <page_callback>CRM_Assetlist_Form_CreateAssetForm</page_callback>
+    <title>CreateAssetForm</title>
+    <access_arguments>access CiviCRM</access_arguments>
+  </item>
+  <item>
+    <path>civicrm/assets/view</path>
+    <page_callback>CRM_Assetlist_Form_ViewAssetForm</page_callback>
+    <title>ViewAssetForm</title>
+    <access_arguments>access CiviCRM</access_arguments>
+  </item>
+</menu>

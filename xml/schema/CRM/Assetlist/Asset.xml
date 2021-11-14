@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+
+<table>
+  <base>CRM/Assetlist</base>
+  <class>Asset</class>
+  <name>civicrm_asset</name>
+  <comment>Stores data for physical assets.</comment>
+  <log>true</log>
+
+  <field>
+    <name>id</name>
+    <type>int unsigned</type>
+    <required>true</required>
+    <comment>Unique Asset ID</comment>
+    <html>
+      <type>Number</type>
+    </html>
+  </field>
+  <primaryKey>
+    <name>id</name>
+    <autoincrement>true</autoincrement>
+  </primaryKey>
+
+  <field>
+    <name>name</name>
+    <type>varchar</type>
+    <length>255</length>
+    <comment>Asset Name</comment>
+    <title>Name</title>
+    <required>true</required>
+    <export>true</export>
+    <uniqueName>asset_name</uniqueName>
+  </field>
+
+  <field>
+    <name>asset_type_id</name>
+    <title>Asset Type ID</title>
+    <type>int unsigned</type>
+    <required>true</required>
+    <comment>Virtual FK to Asset Type ID.</comment>
+    <pseudoconstant>
+      <optionGroupName>asset_types</optionGroupName>
+    </pseudoconstant>
+  </field>
+
+  <field>
+    <name>asset_description</name>
+    <title>Asset Description</title>
+    <comment>A text-based description of the asset.</comment>
+    <type>varchar</type>
+    <length>850</length>
+  </field>
+
+  <field>
+    <name>asset_owner_contact_id</name>
+    <type>int unsigned</type>
+    <comment>FK to Contact that owns the asset (usually an organisation).</comment>
+  </field>
+  <foreignKey>
+    <name>asset_owner_contact_id</name>
+    <table>civicrm_contact</table>
+    <key>id</key>
+    <onDelete>NO ACTION</onDelete>
+  </foreignKey>
+
+  <field>
+    <name>asset_possessor_contact_id</name>
+    <type>int unsigned</type>
+    <comment>FK to Contact that possesses the asset (usually an individual).</comment>
+  </field>
+  <foreignKey>
+    <name>asset_possessor_contact_id</name>
+    <table>civicrm_contact</table>
+    <key>id</key>
+    <onDelete>NO ACTION</onDelete>
+  </foreignKey>
+</table>
